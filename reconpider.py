@@ -81,43 +81,48 @@ def make_wordlist(get_domain):
     print(proc)
 
 # Subdomain enumeration condition's
+result_call_crt = call_crt(domain)
+# silent mode and save result 
 if domain and silent and output:
     with open(output, "w") as f:
-        f.write(call_crt(domain))
-        print("Save result to file")
+        f.write(result_call_crt)
+    print(result_call_crt)
+    print("Save result to file - Status: OK")
+# Just silent mode
 elif domain and silent:
-    call_crt(str(domain))
+    print(result_call_crt)
+# Default mode with save resolver 
 elif domain and output:
     print(banner)
-    result = call_crt(domain)
     with open(output,"w") as f:
-        f.write(result)
-    print(result)
+        f.write(result_call_crt)
+    print(result_call_crt)
+    print("Save result to file - Status: OK")
+# Default without save result
 elif domain:
     print(banner)
-    call_crt(str(domain))
+    print(result_call_crt)
 
-    
-    
+# Search in BGPview API  feature
+result_search_bgp = searhc_bgp(user_input) 
 if search and user_input and silent and output:
-    result = searhc_bgp(user_input)
-    print(result)
+    print(result_search_bgp)
     with open(output, "w") as f:
-        f.write(result)
-        
+        f.write(result_search_bgp)
     print("Seve result to file - Status: OK")
+# Without save to file
 elif search and user_input and silent:
-    result = searhc_bgp(user_input)
-    print(result)
+    print(result_search_bgp)
+# With save to file
 elif search and user_input and output:
-    result = searhc_bgp(user_input)
+    print(result_search_bgp)
     with open(output, "w") as f:
-        f.write(result)
-        
+        f.write(result_search_bgp)
     print("Save result to file - Status: OK")
+# Default mode
 elif search and user_input:
     print(banner)
-    print(result)
+    print(result_search_bgp)
 
 
 resut_wordlist = make_wordlist(domain)
@@ -136,5 +141,3 @@ elif wordlist and domain and output:
 elif wordlist and domain:
     print(banner)
     print(resut_wordlist)
-
-

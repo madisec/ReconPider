@@ -6,3 +6,4 @@ mkdir ~/.reconpider/binfile
 echo "Make directory for tool"
 cp file/subfinder ~/.reconpider/binfile
 cp reconpider.py ~/.reconpider
+pip install -r requirement.txt
