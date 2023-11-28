@@ -16,6 +16,7 @@ python3 reconpider.py -h
 
 ### You can add to bashrc or zshrc.
 
+### Help page
 ```
 ReconPider(main)$ python3 reconpider.py -h 
 usage: reconpider
