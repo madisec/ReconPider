@@ -2,6 +2,9 @@
 
 An automation Python tool for subdomain enumeration and other features. ( For university presentation )
 
+## Mind map
+<img src="./ReconPider.png">
+
 ## Install
 
 ```bash
